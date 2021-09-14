@@ -1,10 +1,13 @@
-let inputString = document.querySelector(".input");
-let rpn = document.querySelector(".rpn");
-console.log(inputString.value);
-setInterval(()=>{
-    rpn.textContent = inputString.value;
-},100);
+import rpn from "rpn.js"
 
-function RPN(string){
-    
-}
+let inputString = document.querySelector(".input");
+let RPN = document.querySelector(".rpn");
+let output = document.querySelector(".output");
+
+let btn = document.querySelector('.btn');
+
+btn.onclick = () =>{
+    RPN.textContent = new rpn(inputString.value).$outputRpn();
+};
+
+
